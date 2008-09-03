@@ -1,0 +1,40 @@
+{% autoescape off %}
+<div id='info'>
+    <div id='design'>
+        <div id='title'>
+            <div class='inline'>
+                <div class='title'>{{info.design_title}}</div>
+                {% if info.design_title_extra %}
+                <div class='extra'>{{info.design_title_extra}}</div>
+                {% endif %}
+            </div>       
+        </div>
+        <div id='description'>
+            {{info.design_description}}                    
+        </div>
+    </div>
+    <div id='specs'>
+        <div id='title'>
+            <div class='list'>
+                <div class='title'>{{info.specs_title}}</div>
+                {% if info.specs_title_extra %}
+                <div class='extra'>{{info.specs_title_extra}}</div>
+                {% endif %}
+            </div>
+        </div>
+        <div id='description'>
+            {{info.specs_description}}                    
+        </div>
+    </div> 
+    <div id='gallery' class='inline'>
+        <div id='title'>
+            <div class='inline'>
+                <div class='title'>{{info.gallery_title}}</div>
+                {% if info.gallery_title_extra %}
+                <div class='extra'>{{info.gallery_title_extra}}</div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endautoescape %}

@@ -1,0 +1,11 @@
+{% autoescape off %}
+<div id='company'>
+        <div id='title'>
+                <div class='title'>{{ language.title }}</div>
+        </div>
+    
+        <div id='content'>
+            {{ language.description }}
+        </div>
+</div>
+{% endautoescape %}

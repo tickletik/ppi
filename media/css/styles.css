@@ -1,0 +1,10 @@
+p {
+	font-family: _sans; 
+	color: #f36600;
+	font-size: 84px;
+}
+
+.emphasis {
+	font-weight: bold;
+	font-style: italic;
+}

@@ -1,0 +1,51 @@
+/* header definitions */
+
+div.page { 
+	font-family: _sans; 
+	color: #ff6600;
+	font-size: 24px;
+}
+div.section {
+	font-family: _sans; 
+	color: #ff6600;
+	font-size: 18px;
+	line-height: 0pt;
+}
+
+
+/* paragraph definitions */
+div.generic {
+	font-family: _sans;
+	color: #ffffff;
+	font-size: 12px;
+	display: inline;
+	line-height: 0pt;
+}
+
+ul.address {
+    list-style-type: none;
+}
+
+dt.phone {
+        float: left;
+}
+
+	/*
+div.founder {}
+div.legal {}
+*/
+
+/* span definition */
+		/*
+.contact-type {}
+*/
+
+/* link definitions */
+a.anchor-email {}
+
+/* list definitions */
+ul.generic {}
+ul.person {}
+ul.phone {}
+ul.web {}
+

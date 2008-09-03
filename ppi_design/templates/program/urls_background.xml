@@ -1,0 +1,5 @@
+<backgrounds>
+        <url id='design'>{{MEDIA_URL}}{{car.background_design}}</url>
+        <url id='specs'>{{MEDIA_URL}}{{car.background_specs}}</url>
+        <url id='gallery'>{{MEDIA_URL}}{{car.background_gallery}}</url>
+</backgrounds>

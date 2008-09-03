@@ -1,0 +1,6 @@
+<menu>
+        <label id='design'>{{l.design}}</label>
+        <label id='specs'>{{l.specs}}</label>
+        <label id='shop'>{{l.shop}}</label>
+        <label id='gallery'>{{l.gallery}}</label>
+</menu>
