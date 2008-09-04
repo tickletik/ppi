@@ -21,3 +21,7 @@ def _get_comp_lang(company, code):
 
 def http_menu(request, lang):
     return HttpResponse(_xml_menu(lang))
+
+def http_index(request):
+    t = loader.get_template('basic/index.html')
+    return HttpResponse(t.render())

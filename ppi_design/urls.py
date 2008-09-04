@@ -9,6 +9,7 @@ urlpatterns = patterns('ppi_design.app_company.views',
 )
 
 urlpatterns += patterns('ppi_design.app_basic.views',
+    (r'^$', 'http_index'),
     (r'^main/(?P<lang>\D{2})/menu/$', 'http_menu'),
 )
 
