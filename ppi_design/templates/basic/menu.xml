@@ -2,7 +2,7 @@
 <component name="Drop Down Tree Menu v3">
     <data>
         <main childStyle="style1">
-            <item title="Home" childStyle="style2" function="menu_load(home)"></item>
+            <item title="Home" childStyle="style2" function="menu_basic(home)"></item>
             <item title="Company" childStyle="style2">
                     {% autoescape off %}
                     {% for company in company_list %}

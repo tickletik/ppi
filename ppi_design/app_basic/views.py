@@ -3,6 +3,7 @@ from django.template import Context, loader
 from django.http import HttpResponse
 import ppi_design.app_company.models as c_models 
 from ppi_design.app_basic.models import *
+from ppi_design.settings import MEDIA_URL, BASE_URL
 
 
 def _xml_menu(lang):
@@ -24,5 +25,5 @@ def http_menu(request, lang):
 
 def http_index(request):
     t = loader.get_template('basic/index.html')
-    c = Context({})
+    c = Context({'MEDIA_URL':MEDIA_URL, 'BASE_URL':BASE_URL})
     return HttpResponse(t.render(c))
