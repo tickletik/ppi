@@ -1,10 +1,33 @@
-p {
-	font-family: _sans; 
-	color: #f36600;
-	font-size: 84px;
+html,body {
+	overflow:hidden; 
+	height:100%;
+	margin:0px;
+	padding:0px;
+	border:0px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:9pt;
+	color:#333333;
+	background-color:#000000;
 }
 
-.emphasis {
-	font-weight: bold;
-	font-style: italic;
+table {
+	border:0px;
+	border-collapse:collapse;
 }
+
+table td {
+	padding:0px;
+	vertical-align:top;
+}
+
+.flash{
+    width: 100%; 
+	vertical-align:middle;
+	color:#F96E19;
+}
+
+.flash_version{
+	color: #fff; 
+	text-decoration: underline;
+}
+
