@@ -24,4 +24,5 @@ def http_menu(request, lang):
 
 def http_index(request):
     t = loader.get_template('basic/index.html')
-    return HttpResponse(t.render())
+    c = Context({})
+    return HttpResponse(t.render(c))
