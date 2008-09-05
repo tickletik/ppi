@@ -45,10 +45,10 @@ MEDIA_ROOT = '/Users/ronny/Sites/media'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://django.loc/ppi_media/'
+MEDIA_URL = 'http://django.loc/ppi_media'
 
 # used for the flash apps
-BASE_URL = 'http://django.loc/ppi_design/'
+BASE_URL = 'http://django.loc/ppi_design'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.

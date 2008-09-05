@@ -1,8 +1,8 @@
 <gallery>
         {% for image in gallery %}
 	<image_pair id='pair_{{image.position}}'>
-		<url id='thumb'>{{MEDIA_URL}}{{image.thumb}}</url>
-               	<url id='large'>{{MEDIA_URL}}{{image.large}}</url>
+		<url id='thumb'>{{MEDIA_URL}}/{{image.thumb}}</url>
+		<url id='large'>{{MEDIA_URL}}/{{image.large}}</url>
 	</image_pair>
         {% endfor %}
 </gallery>
