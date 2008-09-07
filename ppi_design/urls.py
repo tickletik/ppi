@@ -5,12 +5,13 @@ admin.autodiscover()
 
 urlpatterns = patterns('ppi_design.app_company.views',
     # Example:
-    (r'^company/(?P<lang>\D{2})/(?P<name>\w+)/text/$', 'http_text'),
+    (r'^xml/company/info/(?P<lang>\D{2})/(?P<name>\w+)/$', 'http_text'),
 )
 
 urlpatterns += patterns('ppi_design.app_basic.views',
     (r'^$', 'http_index'),
-    (r'^main/(?P<lang>\D{2})/menu/$', 'http_menu'),
+    (r'^xml/menu/(?P<lang>\D{2})/$', 'http_menu'),
+    (r'^xml/languages/$', 'http_lang_buttons'),
 )
 
 urlpatterns += patterns('ppi_design.app_program.views',
