@@ -13,26 +13,45 @@ def _xml_menu_program(code):
     language = LanguageChoice.objects.get(code=code)
     base = p_models.CarBase.objects.all()
 
-    menu = dict()
+    program = list() 
     for b in base:
             series = p_models.CarSeries.objects.filter(base=b)
+            series_list = list()
             for s in series:
                 cars = p_models.Car.objects.filter(series=s)
+                car_list = list()
                 for c in cars:
-                        menu[b] = dict()
-                        menu[b][s] = dict()
-                        menu[b][s][c.name] = c
+                        car_list.append(c)
+
+                series_list.append({"series":s, "cars":car_list})
+            program.append({"base":b, "series":series_list})
+
     t = loader.get_template("basic/menu.xml")
-    c = Context({"menu":menu})
+    c = Context({"program":program})
     return t.render(c)
 
 
 def _xml_menu(lang):
     company_pages = c_models.CompanyPage.objects.order_by("order")    
     c_menus = [_get_comp_lang(comp, lang) for comp in company_pages]
+
+    base = p_models.CarBase.objects.all()
          
+    program = list() 
+    for b in base:
+            series = p_models.CarSeries.objects.filter(base=b)
+            series_list = list()
+            for s in series:
+                cars = p_models.Car.objects.filter(series=s)
+                car_list = list()
+                for c in cars:
+                        car_list.append(c)
+
+                series_list.append({"series":s, "cars":car_list})
+            program.append({"base":b, "series":series_list})
+
     t = loader.get_template("basic/menu.xml")
-    c = Context({"company_list":c_menus})
+    c = Context({"company_list":c_menus, "program":program})
     return t.render(c)
 
 

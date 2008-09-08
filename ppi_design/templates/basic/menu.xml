@@ -11,25 +11,19 @@
                     {% endautoescape %}
             </item>
             <item title="Program" childStyle="style3">
-                    <item title="Online Shop"/>
-                    <item title="Wheels"/>
-                    <item title="A8">
-                        <item title="D3 2003">
-                                <item title="A8 Executive" function="menu_program(a8_executive)"></item>
-                        </item>     
-                    </item>
-                    <item title="TT">
-                        <item title="SN 1998 2007">
-                                <item title="S TT" function="menu_program(s_tt)"></item>
-                                <item title="RS TT" function="menu_program(rs_tt)"></item>
-                        </item>     
-                        <item title="SJ 2008"></item>     
-                    </item>
-                    <item title="Q7">
-                        <item title="2006">
-                                <item title="PS Q7" function="menu_program(ps_q7)"></item>
-                        </item>     
-                    </item>
+                    {% autoescape off %}
+                    {% for prog in program %}
+                     <item title="{{prog.base.title}}">
+                         {% for series in prog.series %}
+                             <item title="{{series.series.title}}">
+                             {% for car in series.cars %}
+                                <item title ="{{car.title}}" function="menu_program({{car.name}})" />
+                             {% endfor %}
+                             </item>
+                         {% endfor %}
+                     </item>
+                    {% endfor %}
+                    {% endautoescape %}
             </item>
             <item title="Vehicles" function="menu_load(shop)"/>
             <item title="Events" childStyle="style3">
