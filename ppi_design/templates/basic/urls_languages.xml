@@ -1,0 +1,9 @@
+<languages>
+    {% for language in languages %}
+    <image_pair id="{{language.code}}">
+        <url id="downstate">{{MEDIA_URL}}/{{language.image}}</url>
+        <url id="upstate">{{MEDIA_URL}}/{{language.image}}</url>
+        <menu id="order">{{language.menu_order}}</menu>
+    </image_pair>
+    {% endfor %}
+</languages>

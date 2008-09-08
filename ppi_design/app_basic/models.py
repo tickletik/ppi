@@ -20,8 +20,17 @@ class LanguageChoice(models.Model):
     name = models.CharField(max_length=40)
     code = models.CharField(max_length=2, choices=LANGUAGE_CHOICES)
     image = models.ImageField(upload_to='uploads/flag')
+    menu_order = models.IntegerField()
 
     def __unicode__(self):
-        return "[" + self.code+ "] " + self.name
+        return "[%s] %s" % (self.code, self.name)
+
+class Internationalization(models.Model):
+    language = models.ForeignKey(LanguageChoice)
+    lang_selection = models.CharField(max_length=60)
+
+    def __unicode__(self):
+        return "[%s] %s" % (self.language.code, self.language.name)
 
 admin.site.register(LanguageChoice)
+admin.site.register(Internationalization)

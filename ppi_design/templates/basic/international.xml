@@ -1,0 +1,3 @@
+<international>
+        <label id="lang_select">{{international.lang_selection}}</label>
+</international>
