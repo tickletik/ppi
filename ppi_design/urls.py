@@ -11,6 +11,7 @@ urlpatterns = patterns('ppi_design.app_company.views',
 urlpatterns += patterns('ppi_design.app_basic.views',
     (r'^$', 'http_index'),
     (r'^xml/menu/(?P<lang>\D{2})/$', 'http_menu'),
+    (r'^xml/menu/program/(?P<lang>\D{2})/$', 'http_menu_program'),
     (r'^xml/language/urls/$', 'http_languages'),
     (r'^xml/language/labels/(?P<code>\D{2})/$', 'http_internationalization'),
 )
