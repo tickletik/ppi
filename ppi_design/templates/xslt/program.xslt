@@ -50,12 +50,12 @@
 
 	<xsl:template match="mail">
 		<xsl:variable name="mail-address"><xsl:value-of select="@addr"/></xsl:variable>
-		<a href="mailto:{$mail-address}"><xsl:value-of select="@addr"/></a>
+		<a class="mail" href="mailto:{$mail-address}"><xsl:value-of select="@addr"/></a>
 	</xsl:template>
 
 	<xsl:template match="url">
 		<xsl:variable name="url-address"><xsl:value-of select="@addr"/></xsl:variable>
-		<a href="http://{$url-address}"><xsl:value-of select="@addr"/></a>
+		<a class="url" href="http://{$url-address}"><xsl:value-of select="@addr"/></a>
 	</xsl:template>
 
 	<xsl:template match="inline//label">
