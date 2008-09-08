@@ -10,7 +10,7 @@
             </div>       
         </div>
         <div id='description'>
-            {{info.design_description}}                    
+                {{description.design}}
         </div>
     </div>
     <div id='specs'>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div id='description'>
-            {{info.specs_description}}                    
+                {{description.specs}}
         </div>
     </div> 
     <div id='gallery' class='inline'>

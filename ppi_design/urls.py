@@ -17,6 +17,8 @@ urlpatterns += patterns('ppi_design.app_basic.views',
 )
 
 urlpatterns += patterns('ppi_design.app_program.views',
+    (r'^xml/programs/info/(?P<lang>\D{2})/(?P<_name>\w+)/$', 'http_info'),
+
     (r'^programs/(?P<lang>\D{2})/labels/$', 'http_labels'),
     (r'^programs/(?P<lang>\D{2})/(?P<_name>\w+)/backgrounds/$', 'http_backgrounds'),
     (r'^programs/(?P<lang>\D{2})/(?P<_name>\w+)/info/$', 'http_info'),

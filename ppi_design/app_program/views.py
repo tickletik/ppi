@@ -5,7 +5,10 @@ from ppi_design.app_program.models import *
 from ppi_design.app_basic.models import LanguageChoice
 from ppi_design.settings import MEDIA_URL
 
+import libxml2
+import libxslt
 import re
+
 
 def _xml_labels(code):
     language = LanguageChoice.objects.get(code=code) 
@@ -32,13 +35,36 @@ def _xml_info(code, _name):
     car = Car.objects.get(name=_name)
     info = Language.objects.get(car=car, language=language) 
     
-    pattern_amp = re.compile(' & ', re.I|re.M)
-    pattern = re.compile('\r\n', re.I|re.M)
-    info.design_description = unicode(pattern.sub("\n", info.design_description))
-    info.specs_description = unicode(pattern.sub("\n", info.specs_description))
+    #pattern_amp = re.compile(' & ', re.I|re.M)
+    #pattern = re.compile('\r\n', re.I|re.M)
+    #info.design_description = unicode(pattern.sub("\n", info.design_description))
+    #info.specs_description = unicode(pattern.sub("\n", info.specs_description))
 
-    t = loader.get_template('program/data.xml')
-    c = Context({'info':info,})
+    t = loader.get_template("xslt/company.xslt")
+    c = Context({})
+    xslt = libxslt.parseStylesheetDoc(libxml2.parseDoc(t.render(c)))
+
+
+    desc = dict()
+
+    doc = "<%s>%s</%s>" % ("program", info.specs_description, "program") 
+    doc = libxml2.parseDoc(doc.encode("utf-8"))
+    res = libxslt.stylesheet.applyStylesheet(xslt, doc, {})
+    desc["specs"] = res.__str__()
+
+    doc = "<%s>%s</%s>" % ("program", info.design_description, "program") 
+    doc = libxml2.parseDoc(doc.encode("utf-8"))
+    res = libxslt.stylesheet.applyStylesheet(xslt, doc, {})
+    desc["design"] = res.__str__()
+
+
+    p = re.compile('<\?xml version="1.0"\?>')
+    desc["specs"] = p.sub("", desc["specs"])
+    desc["design"] = p.sub("", desc["design"])
+
+
+    t = loader.get_template("program/data.xml")
+    c = Context({"info":info, "description":desc})
     return t.render(c)
 
 def http_labels(request, lang):
