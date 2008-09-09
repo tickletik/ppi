@@ -22,12 +22,31 @@ class LanguageChoice(models.Model):
     image = models.ImageField(upload_to='uploads/flag')
     menu_order = models.IntegerField()
 
+    # necessary for if we're going to use this language
+    activated = models.BooleanField()
+
     def __unicode__(self):
         return "[%s] %s" % (self.code, self.name)
 
 class Internationalization(models.Model):
     language = models.ForeignKey(LanguageChoice)
     lang_selection = models.CharField(max_length=60)
+
+    menu_home = models.CharField(max_length=20)
+    menu_company = models.CharField(max_length=20)
+    menu_program = models.CharField(max_length=20)
+    menu_shop = models.CharField(max_length=20)
+    menu_events = models.CharField(max_length=20)
+    menu_press = models.CharField(max_length=20)
+    menu_news = models.CharField(max_length=20)
+    menu_contact = models.CharField(max_length=20)
+
+    contact_manufacturer = models.CharField(max_length=20)
+    contact_distributor = models.CharField(max_length=20)
+
+    press_publications = models.CharField(max_length=30)
+    press_photographers = models.CharField(max_length=30)
+    press_login = models.CharField(max_length=30)
 
     def __unicode__(self):
         return "[%s] %s" % (self.language.code, self.language.name)

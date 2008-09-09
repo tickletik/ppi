@@ -32,11 +32,15 @@ def _xml_menu_program(code):
 
 
 def _xml_menu(lang):
+    language = LanguageChoice.objects.get(code=lang)
+    labels = Internationalization.objects.get(language=language)
+
+    # create the company page drop down menu list
     company_pages = c_models.CompanyPage.objects.order_by("order")    
     c_menus = [_get_comp_lang(comp, lang) for comp in company_pages]
 
+    # create the program drop down menu list
     base = p_models.CarBase.objects.all()
-         
     program = list() 
     for b in base:
             series = p_models.CarSeries.objects.filter(base=b)
@@ -51,7 +55,7 @@ def _xml_menu(lang):
             program.append({"base":b, "series":series_list})
 
     t = loader.get_template("basic/menu.xml")
-    c = Context({"company_list":c_menus, "program":program})
+    c = Context({"company_list":c_menus, "program":program, "labels":labels})
     return t.render(c)
 
 

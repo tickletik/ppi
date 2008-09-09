@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <component name="Drop Down Tree Menu v3">
-    <data>
-        <main childStyle="style1">
-            <item title="Home" childStyle="style2" function="menu_basic(home)"></item>
-            <item title="Company" childStyle="style2">
+        <data>
+            <main childStyle="style1">
+                <item title="{{labels.menu_home}}" childStyle="style2" function="menu_basic(home)"></item>
+                <item title="{{labels.menu_company}}" childStyle="style2">
                     {% autoescape off %}
                     {% for company in company_list %}
                     <item title="{{ company.title }}" function="menu_company({{ company.name }})"/>
                     {% endfor %}
                     {% endautoescape %}
-            </item>
-            <item title="Program" childStyle="style3">
+                </item>
+                <item title="{{labels.menu_program}}" childStyle="style3">
                     {% autoescape off %}
                     {% for prog in program %}
                      <item title="{{prog.base.title}}">
@@ -24,9 +24,9 @@
                      </item>
                     {% endfor %}
                     {% endautoescape %}
-            </item>
-            <item title="Vehicles" function="menu_load(shop)"/>
-            <item title="Events" childStyle="style3">
+                </item>
+                <item title="{{labels.menu_shop}}" function="menu_load(shop)"/>
+                <item title="{{labels.menu_events}}" childStyle="style3">
                     <item title="Essen">
                             <item title="Essen 2006" function="menu_events(essen, 2006)"/>
                             <item title="Essen 2007" function="menu_events(essen, 2007)"/>
@@ -40,19 +40,19 @@
                     </item>
                     <item title="Japan SIS">
                     </item>
-            </item>
-            <item title="Press" childStyle="style3">
-                    <item title="Publications" function="menu_load(publications)" />
-                    <item title="Photographers" childStyle="style3">
+                </item>
+                <item title="{{labels.menu_press}}" childStyle="style3">
+                        <item title="{{labels.press_publications}}" function="menu_load(publications)" />
+                        <item title="{{labels.press_photographers}}" childStyle="style3">
                             <item title="Joost" function="menu_load(joost)"/>
                             <item title="Tony" function="menu_load(tony)"/>
-                    </item>
-                    <item title="Press Login" function="menu_load(login)" />
-            </item>
-            <item title="News" childStyle="style2" function="menu_load(news)" />
-            <item title="Contact Us" childStyle="style2" function="menu_load(contact)" />
-        </main>
-    </data>
+                        </item>
+                        <item title="{{labels.press_login}}" function="menu_load(login)" />
+                </item>
+                <item title="{{labels.menu_news}}" childStyle="style2" function="menu_load(news)" />
+                <item title="{{labels.menu_contact}}" childStyle="style2" function="menu_load(contact)" />
+            </main>
+        </data>
     
     <styles>
         <style1>

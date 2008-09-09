@@ -21,11 +21,6 @@ urlpatterns += patterns('ppi_design.app_program.views',
     (r'^xml/programs/labels/(?P<lang>\D{2})/$', 'http_labels'),
     (r'^xml/programs/urls/backgrounds/(?P<lang>\D{2})/(?P<_name>\w+)/$', 'http_backgrounds'),
     (r'^xml/programs/urls/gallery/(?P<_name>\w+)/$', 'http_gallery'),
-
-    #(r'^programs/(?P<lang>\D{2})/labels/$', 'http_labels'),
-    #(r'^programs/(?P<lang>\D{2})/(?P<_name>\w+)/backgrounds/$', 'http_backgrounds'),
-    #(r'^programs/(?P<lang>\D{2})/(?P<_name>\w+)/info/$', 'http_info'),
-    #(r'^programs/(?P<_name>\w+)/gallery/$', 'http_gallery'),
 )
 
 urlpatterns += patterns('', 
