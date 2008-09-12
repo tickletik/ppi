@@ -91,4 +91,5 @@ INSTALLED_APPS = (
     'ppi_design.app_company',
     'ppi_design.app_program',
     'ppi_design.app_basic',
+    'ppi_design.app_events',
 )
