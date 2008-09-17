@@ -59,7 +59,7 @@
 	</xsl:template>
 
 	<xsl:template match="inline//label">
-		<div class="label"><xsl:appy-templates/></div>
+		<div class="label"><xsl:apply-templates/></div>
 	</xsl:template>
 
 	<xsl:template match="inline//data">
