@@ -63,8 +63,8 @@
             <folderIconId></folderIconId>
             <itemHeight>35</itemHeight>
             <textFormat>
-                <font>ヒラギノ丸ゴ Pro W4</font>
-                <size>13</size>
+                <font>Eurostile</font>
+                <size>14</size>
                 <color>0xFFFFFF</color>
             </textFormat>
             <parts>
@@ -105,7 +105,7 @@
             <folderIconId>DDM_OrangeD1_style2_folderIcon</folderIconId>
             <itemHeight>30</itemHeight>
             <textFormat>
-                <font>ヒラギノ丸ゴ Pro W4</font>
+                <font>Eurostile</font>
                 <size>14</size>
                 <color>0xFFFFFF</color>
             </textFormat>
@@ -147,7 +147,7 @@
             <folderIconId>DDM_OrangeD1_style3_folderIcon</folderIconId>
             <itemHeight>30</itemHeight>
             <textFormat>
-                <font>ヒラギノ丸ゴ Pro W4</font>
+                <font>Eurostile</font>
                 <size>14</size>
                 <color>0xFFFFFF</color>
                 </textFormat>
