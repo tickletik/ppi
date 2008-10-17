@@ -2,7 +2,9 @@
 <component name="Drop Down Tree Menu v3">
         <data>
             <main childStyle="style1">
+
                 <item title="{{labels.menu_home}}" childStyle="style2" function="menu_basic(home)"></item>
+
                 <item title="{{labels.menu_company}}" childStyle="style2">
                     {% autoescape off %}
                     {% for company in company_list %}
@@ -10,22 +12,53 @@
                     {% endfor %}
                     {% endautoescape %}
                 </item>
-                <item title="{{labels.menu_program}}" childStyle="style3">
-                    {% autoescape off %}
-                    {% for prog in program %}
-                     <item title="{{prog.base.title}}">
-                         {% for series in prog.series %}
-                             <item title="{{series.series.title}}">
-                             {% for car in series.cars %}
-                                <item title ="{{car.title}}" function="menu_program({{car.name}})" />
-                             {% endfor %}
-                             </item>
-                         {% endfor %}
-                     </item>
-                    {% endfor %}
-                    {% endautoescape %}
-                </item>
+
+		<item title="Program" childStyle="style3">
+			<item title="Online Shope"></item>
+			<item title="Chip Tuning"></item>
+			<item title="Wheels"></item>
+
+			<item title="A6">
+				<item title="C6 2005+"></item>
+			</item>
+
+			<item title="A8">
+				<item title="D3 2003+">
+					<item title="A8 Executive"></item>
+				</item>
+			</item>
+
+			<item title="RS4">
+				<item title="2006+"></item>
+			</item>
+
+			<item title="R8">
+				<item title="2007+">
+					<item title="PPI RAZOR"></item>
+				</item>
+			</item>
+
+			<item title="TT">
+				<item title="SN 1998-2006">
+					<item title="S TT"></item>
+					<item title="RS TT"></item>
+				</item>
+				<item title="SN 2006+">
+					<item title="PS TT Coupe"></item>
+				</item>
+			</item>
+
+			<item title="Q7">
+				<item title="2006+">
+					<item title="PPI ICE"></item>
+					<item title="PS Q7"></item>
+				</item>
+			</item>
+		</item>
+
+
                 <item title="{{labels.menu_shop}}" function="menu_load(shop)"/>
+
                 <item title="{{labels.menu_events}}" childStyle="style3">
                     <item title="Essen">
                             <item title="Essen 2006" function="menu_events(essen, 2006)"/>
@@ -34,12 +67,11 @@
                     <item title="Waterfest">
                             <item title="Waterfest 2003" function="menu_events(waterfest, 2003)"/>
                     </item>
-                    <item title="Hockenheim">
-                    </item>
-                    <item title="Sweden">
-                    </item>
-                    <item title="Japan SIS">
-                    </item>
+                    <item title="Hockenheim"></item>
+                    <item title="Sweden"></item>
+                    <item title="Friedrichshafen"></item>
+		    <item title="Japan SIS"></item>
+                    <item title="Fellbach"></item>
                 </item>
                 <item title="{{labels.menu_press}}" childStyle="style3">
                         <item title="{{labels.press_publications}}" function="menu_load(publications)" />
