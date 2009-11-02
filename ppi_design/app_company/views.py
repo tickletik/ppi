@@ -21,7 +21,7 @@ def _xml_company_text(code, name):
     doc = "<%s>%s</%s>" % ("company", pref.description, "company") 
     doc = libxml2.parseDoc(doc.encode("utf-8"))
     res = libxslt.stylesheet.applyStylesheet(xslt, doc, {})
-    content = res.content()
+    content = res.content
 
     """
     I don't know how to remove the stupid declaration yet, and I need
