@@ -50,12 +50,12 @@ def _xml_info(code, _name):
     doc = "<%s>%s</%s>" % ("program", info.specs_description, "program") 
     doc = libxml2.parseDoc(doc.encode("utf-8"))
     res = libxslt.stylesheet.applyStylesheet(xslt, doc, {})
-    desc["specs"] = res.__str__()
+    desc["specs"] = res.content
 
     doc = "<%s>%s</%s>" % ("program", info.design_description, "program") 
     doc = libxml2.parseDoc(doc.encode("utf-8"))
     res = libxslt.stylesheet.applyStylesheet(xslt, doc, {})
-    desc["design"] = res.__str__()
+    desc["design"] = res.content
 
 
     p = re.compile('<\?xml version="1.0"\?>')
